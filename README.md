@@ -17,3 +17,9 @@ TODO:
               4) Different CRM Work/Familiarity, 5) MATLAB, 6) Photography
 
 *Fix Contact Form with PHP (or Python)
+
+
+TODO LATER:
+
+*Typography/Font idea
+*Blog
