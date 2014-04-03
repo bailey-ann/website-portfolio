@@ -15,7 +15,7 @@ TODO:
 
 *Fix Contact Form with PHP (or Python)
 
-
+*Sidebard appears strange in mobile view
 
 TODO LATER:
 
