@@ -13,7 +13,7 @@ TODO:
 -- Find better pictures for Portfolio section
 -- Make new pages for links w/ relevant info
 
-*Fix Contact Form with PHP (or Python)
+*Fix Contact Form with PHP --> jQuery-validation?
 
 *Sidebard appears strange in mobile view
 
