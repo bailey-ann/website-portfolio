@@ -159,7 +159,7 @@
 						<div class="container">
 
 							<header>
-								<h2 id="contactTitle">Contact</h2>
+								<h2 id="contactTitle"><strong>Contact</strong></h2>
 							</header>
 
 							<p>Tell me what you think or teach me something cool! What can I do better? Let's work together!<br >(I also love jokes!)</p>
