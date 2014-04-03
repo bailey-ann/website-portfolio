@@ -11,6 +11,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="contact.php"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -113,7 +114,7 @@
 										</header>
 									</article>
 									<article class="item">
-										<a href="#" target="_blank" class="image full"><img src="images/github.png" alt="" /></a>
+										<a href="https://github.com/bailey-ann" target="_blank" class="image full"><img src="images/github.png" alt="" /></a>
 										<header>
 											<h3>Github</h3>
 										</header>
@@ -121,7 +122,7 @@
 								</div>
 								<div class="4u">
 									<article class="item">
-										<a href="https://github.com/bailey-ann" target="_blank" class="image full"><img src="images/python.png" alt="" /></a>
+										<a href="#" target="_blank" class="image full"><img src="images/python.png" alt="" /></a>
 										<header>
 											<h3>Python Work</h3>
 										</header>
