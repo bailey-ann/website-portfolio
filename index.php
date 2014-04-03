@@ -11,7 +11,6 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-		<script src="contact.php"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -30,6 +29,7 @@
 					<!-- Logo -->
 						<div id="logo">
 							<span class="image avatar200"><img src="images/avatar.jpg" alt="" /></span>
+							<br />
 							<h1 id="title">Bailey-Ann Slaughter</h1>
 							<span class="byline">Academic: SAP<br />Self-Driven: Web Design</span>
 						</div>
@@ -71,7 +71,7 @@
 							<a class="image featured"><img src="images/header.png" alt="" /></a>
 
 							<header>
-								<h2 class="alt">My name is <strong>Bailey-Ann</strong>.<br />I aim to seek and destroy the boundaries of Computational Creativity.</h2>
+								<h2 class="alt">My name is <strong>Bailey-Ann</strong>. <br>I aim to seek and destroy the boundaries of Computational Creativity.</h2>
 								<p>Like a <strong>Ninja</strong>. A Self-Motivated, Innovative <strong>Ninja</strong>.</p>
 							</header>
 							<footer>
@@ -159,48 +159,106 @@
 						<div class="container">
 
 							<header>
-								<h2 id="contactTitle"><strong>Contact</strong></h2>
+								<h2 id="contactTitle">Contact</h2>
 							</header>
 
-							<p>Tell me what you think or teach me something cool! What can I do better? Let's work together!<br >(I also love jokes!)</p>
+							<p>Tell me what you think or teach me something cool!<br>Let's work together! (I also love jokes!)</p>
 							
-							<form action="contact.php" method="post">
-								<div class="row half">
-									<div class="6u"><input type="text" class="text" name="name" placeholder="Name"></div>
-									<div class="6u"><input type="text" class="text" name="email" placeholder="Email"></div>
-								</div>
-								<div class="row half">
-									<div class="12u">
-										<textarea name="message" placeholder="Message"></textarea>
+							
+							<?php
+							
+							if (isset($_POST['submit'])) {
+								$body = '';
+						
+								$body .= 'Name: ' . $_POST['name'] . "\n\n";
+								$body .= 'Email: ' . $_POST['email'] . "\n\n";
+								$body .= 'Message: ' . $_POST['message'] . "\n\n";
+							
+								if (($_POST['name'] &&  $_POST['email'] &&  $_POST['message'] != "") &&  isset($_POST["spamcheck"]) != "") {
+									mail('bailey-ann@practic.ly', 'Practic.ly Contact Form', $body, 'From: $email');
+									echo "<p>Message sent successfully!";
+								}	else {
+									echo "Message failed to send, please check your entries and resubmit,";
+							}
+							
+							$nameErr = $emailErr = $msgErr = $spamcheckErr = "";
+							$name = $email = $message = $spamcheck = "";
+														
+							if ($_SERVER["REQUEST_METHOD"] == "POST") {
+								
+								if (empty($_POST["name"])) {
+									$nameErr = "Name is required";
+								} else {
+									$name = test_input($_POST["name"]);
+									if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+										$nameErr = "Only letters and white space allowed";
+									}
+								}
+								if (empty($_POST["email"])) {
+									$emailErr = "Email is required";
+								} else {
+									$email = test_input($_POST["email"]);
+									if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email)) {
+										$emailErr = "Invalid email format";
+									}
+								}
+								if (empty($_POST["message"])) {
+									$msgErr = "Message is required";
+								} else {
+									$message = test_input($_POST["message"]);
+								}
+								if (!isset($_POST["spamcheck"]))  {
+									$spamcheckErr = "Verify your humanity!";
+								} else {
+									$spamcheck = $_POST["spamcheck"];
+								}
+							}
+							function test_input($data) {
+								$data = trim($data);
+								$data = stripslashes($data);
+								$data = htmlspecialchars($data);
+								return $data;
+							}
+							}
+							?>							
+								<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+									<div class="row half">
+										<div class="6u"><input type="text" class="text" name="name" placeholder="Name*" value="<?php echo htmlspecialchars($name);?>">
+										<span class="error"><?php echo $nameErr;?></span>
+										</div>
+										<div class="6u"><input type="text" class="text" name="email" placeholder="Email*" value="<?php echo htmlspecialchars($email);?>">
+										<span class="error"><?php echo $emailErr;?></span>
+										</div>
 									</div>
-								</div>
-								</br>
-								<input type="text" class="text" name="human" placeholder="What is 2+2? (Anti-spam)">
-								<div class="row">
-									<div class="12u">
-										<input id="submit" name="submit" type="submit" class="button submit" value="Send Message">						
-										<!-- <a href="#" class="button submit">Send Message</a> -->
+									<div class="row half">
+										<div class="12u">
+											<textarea name='message' placeholder="Message*"><?php echo $message;?></textarea>
+											<span class="error"><?php echo $msgErr;?></span>
+										</div>
 									</div>
-								</div>
+									<input id="spamcheck" type="checkbox" name="spamcheck" value="<?php echo htmlspecialchars($spamcheck);?>">I am human.*<br>
+									<span class="error"><?php echo $spamcheckErr;?></span><br>
+									<div class="row">
+										<div class="12u">
+											<input type="submit" name="submit" class="button submit" value="Send Message">
+										</div>
+									</div>
 							</form>
-
+							
+							
 						</div>
 					</section>
 			
 			</div>
 
-		<!-- Footer -->
-			<div id="footer">
-				
-				<!-- Copyright -->
+			<div id="footer">				
 					<div class="copyright">
 						<p>2014 Bailey-Ann Slaughter.</p>
 						<ul class="menu">
 							<li>Website: <a href="http://practic.ly/">practic.ly</a></li>
 						</ul>
 					</div>
-				
 			</div>
-
+			
 	</body>
 </html>

@@ -1176,10 +1176,15 @@
 			background-image: -webkit-linear-gradient(top, #999999 0%, #FFFFFF 100%);
 			background-image: linear-gradient(to bottom, #999999 0%, #FFFFFF 100%);
 			
-			color: #c3f135;
+			color: #333333;
 		}
 		
 		#contactTitle
 		{
 			color: #ffffff;
+		}
+		
+		#spam-check
+		{
+			color: #333333;
 		}
