@@ -8,7 +8,6 @@
 
 	body
 	{
-		background: #0b0c0d;
 	}
 
 	body,input,textarea,select
@@ -96,8 +95,8 @@
 
 		a:hover
 		{
-			color: #E27689;
-			border-bottom-color: rgba(255,255,255,0);
+			color: #66fcf8;
+			border-bottom-color: rgba(102,252,248,0);
 		}
 
 	sub
@@ -310,7 +309,7 @@
 				-webkit-appearance: none;
 				display: block;
 				border: 0;
-				background: #fff;
+				background: #c3f135;
 				background: rgba(255,255,255,0.75);
 				width: 100%;
 				border-radius: 0.35em;
@@ -473,17 +472,13 @@
 
 				.item header h3
 				{
-					color: ffffff;
+					color: #ffffff;
 					font-size: 1em;
 				}
-		#portfolio h3
-		{
-			color: #c3f135;
-		}
 
 /*********************************************************************************/
 /* Icons                                                                         */
-/* Powered by http://fontawesome.io                 */
+/* Powered by http://fontawesome.io                 							 */
 /*********************************************************************************/
 
 	.fa
@@ -920,7 +915,7 @@
 		width: 375px;
 		height: 100%;
 		color: #ffff;
-		background: #35bae1 url('images/overlay.png');
+		background: #33b6dc url('images/overlay.png');
 		box-shadow: inset -0.25em 0 0.25em 0 rgba(0,0,0,0.125);
 		text-align: right;
 	}
@@ -971,9 +966,8 @@
 		cursor: default;
 	}
 	
-		#logo h1
+		#logo h2
 		{
-			position: relative;
 			color: #0b0c0d;
 			font-weight: 600;
 			font-size: 1em;
@@ -982,7 +976,6 @@
 	
 		#logo .byline
 		{
-			position: relative;
 			display: block;
 			font-size: 0.6em;
 			color: #0b0c0d;
@@ -992,24 +985,29 @@
 		
 		#logo .image
 		{
-			position: absolute;
+			position: relative;
 			left: 0;
 			top: 0;
 		}
+		
+	#name
+	{
+		color: #0b0c0d;
+	}
 	
-	#nav
+	nav
 	{
 	}
 	
-		#nav ul
+		nav ul
 		{
 		}
 		
-			#nav ul li
+			nav ul li
 			{
 			}
 			
-				#nav ul li a
+				nav ul li a
 				{
 					display: block;
 					padding: 0.5em 1.5em 0.5em 1.5em;
@@ -1024,14 +1022,14 @@
 					transition: none;
 				}
 				
-					#nav ul li a span
+					nav ul li a span
 					{
 						position: relative;
 						display: block;
 						font-size: 0.8em;
 					}
 					
-						#nav ul li a span:before
+						nav ul li a span:before
 						{
 							position: absolute;
 							left: 0;
@@ -1041,18 +1039,18 @@
 							line-height: 1.75em;
 						}
 
-					#nav ul li a.active
+					nav ul li a.active
 					{
 						background: #0b0c0d;
 						box-shadow: inset 0 0 0.25em 0 rgba(0,0,0,0.125);
 						color: #66fcf8;
 					}
 
-						#nav ul li a.active span
+						nav ul li a.active span
 						{
 						}
 
-							#nav ul li a.active span:before
+							nav ul li a.active span:before
 							{
 								color: #66fcf8;
 							}
@@ -1069,7 +1067,7 @@
 		padding: 3em 0 4em 0;
 		box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.05), inset 0 0.1em 0.1em 0 rgba(255,255,255,0.05);
 		font-size: 0.8em;
-		color: #000000;
+		color: #0b0c0d;
 	}
 
 		#footer .copyright
@@ -1144,6 +1142,11 @@
 		{
 			color: #c3f135;
 		}
+		
+		#portfolio h3
+		{
+			color: #c3f135;
+		}
 	
 		#main > section.three /* About Me */
 		{
@@ -1182,9 +1185,4 @@
 		#contactTitle
 		{
 			color: #ffffff;
-		}
-		
-		#spam-check
-		{
-			color: #333333;
 		}
