@@ -1,29 +1,28 @@
 website-portfolio
 =================
 
-Main page of website, practic.ly, in Portfolio form
+Portfolio Layout, Alpha Phase
 
-The most obvious distortions with the sidebar seem to just involve widescreen desktop monitors.
 
 TODO:
 
-*Different fonts:
+*Look into alternatives for sidebar crowding on: Widescreens - obvious distortion/overlap
+
+*Different fonts?
 --Google Fonts
 --Dancing & Ledger vs. Something more Round & Bubbly
 
 *Links to pictures:
--- Using a jQuery Lighbox to showcase photo gallery.
--- Find better pictures for Portfolio section
-
--- Make new pages for links w/ relevant info
-
-*Fix Contact Form with PHP --> jQuery-validation?
+-- ^^ Do that
+-- jQuery Lightbox > Flickr Photostream
 
 
 TODO LATER:
 
 *Typography/Font idea
 *Blog
+*Test-Driven PHP - http://code.tutsplus.com/series/test-driven-php--net-27482
+*Learn art of proper documentation
 
 =================
-Updated: 8 April 2014
+Updated: 14 April 2014
