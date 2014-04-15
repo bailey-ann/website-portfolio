@@ -166,13 +166,12 @@ if(isset($_POST['submitted'])) {
 	
 				<form id='contactme' action='<?php echo $formproc->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 				<fieldset>	
-				<legend>Say Hi! I also love stories.</legend>
 				
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='hidden' name='<?php echo $formproc->GetFormIDInputName(); ?>' value='<?php echo $formproc->GetFormIDInputValue(); ?>'/>
 				<input type='hidden' name='<?php echo $formproc->GetFormIDInputName(); ?>' value='<?php echo $formproc->GetFormIDInputValue(); ?>'/>	
 				
-				<div class='short_explanation'>(All fields are required to submit).</div>
+				<div class='short_explanation'>Say Hi, I also love jokes!<br>(All fields are required to submit).</div>
 				
 				<div><span class='error'><?php echo $formproc->GetErrorMessage(); ?></span></div>
 					
@@ -191,7 +190,7 @@ if(isset($_POST['submitted'])) {
 				<div class="row half">
 					<div class="12u container">
 						<span id='contactme_message_errorloc' class='error'></span>
-						<textarea name='message' id='message'>Message<?php echo $formproc->SafeDisplay('message') ?></textarea>
+						<textarea name='message' id='message' placeholder="Message"><?php echo $formproc->SafeDisplay('message') ?></textarea>
 					</div>
 				</div>
 				
