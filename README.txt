@@ -1,28 +1,13 @@
-website-portfolio
+website/portfolio
 =================
 
-Portfolio Layout, Alpha Phase
+1) PHP form acting up 
+    - Put it in time out & scraped it back down to the HTML
 
+2) Avatar hugs right side of column on wide screen monitors
 
-TODO:
+3) Portfolio section:
+	- Lightbox > logo grid
+	- Plan for organizing attachments & projects
 
-*Look into alternatives for sidebar crowding on: Widescreens - obvious distortion/overlap
-
-*Different fonts?
---Google Fonts
---Dancing & Ledger vs. Something more Round & Bubbly
-
-*Links to pictures:
--- ^^ Do that
--- jQuery Lightbox > Flickr Photostream
-
-
-TODO LATER:
-
-*Typography/Font idea
-*Blog
-*Test-Driven PHP - http://code.tutsplus.com/series/test-driven-php--net-27482
-*Learn art of proper documentation
-
-=================
-Updated: 14 April 2014
+4) Tumblr merge

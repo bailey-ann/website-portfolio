@@ -14,7 +14,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-		<script src="js/gen_validatorv31.js"></script>
+		<script src="js/gen_validatorv4.js"></script>
 		
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
@@ -29,7 +29,7 @@
 			<div id="logo">
 				<span class="image avatar200"><img src="images/avatar.jpg" alt="" /></span><br>
 				<h1 id="name">Bailey-Ann Slaughter</h1>
-				<span class="byline">Academic: CS & Physics<br><br>Self-Driven: Web Design</span>
+				<span class="byline">Academic: SAP<br>Self-Driven: Web Design</span>
 			</div>
 
 			<nav id="nav">
@@ -67,7 +67,7 @@
 					<p>Like a <strong>Ninja</strong>. A Self-Motivated, Innovative <strong>Ninja</strong>.</p>
 				</header>
 				
-				<footer><a href="https://www.scribd.com/doc/248992239/B-Slaughter-Resume#fullscreen=1" target="_blank" class="button scrolly">Résumé (Scribd)</a></footer>
+				<footer><a href="http://www.scribd.com/doc/215273385/Resume?secret_password=18gxxb0kv675bbe799mw" target="_blank" class="button scrolly">Résumé (Scribd)</a></footer>
 			</div>
 		</section>
 			
@@ -156,10 +156,31 @@
 			<div class="container">
 	
 				<header><h2 id="contactTitle">Contact</h2></header>
-				<br>
-				<h3>Form submitted successfully.<br>
-					Thank you for contacting me!</h3>
-							
+	
+				<p>
+					Tell me what you think or teach me something cool!<br>
+				</p>
+	
+				<form method="POST" name="contactform" action="contact.php">
+					<div class="row half">
+						<div class="6u"><input type="text" class="text" name="name" placeholder="Name"></div>
+						<div class="6u"><input type="text" class="text" name="email" placeholder="Email"></div>
+					</div>
+					<div class="row half">
+						<div class="12u"><textarea name="message" placeholder="Message"></textarea></div>
+					</div>
+					<div class="row">
+						<div class="12u"><input type="submit" name="submit" class="button submit" value="Send Message"></div>
+					</div>
+				</form>
+										
+				<script>
+					var frmvalidator  = new Validator("contactform");
+					frmvalidator.addValidation("name","req","Please provide your name"); 
+					frmvalidator.addValidation("email","req","Please provide your email"); 
+					frmvalidator.addValidation("message","req","Please enter a message"); 
+				</script>
+				
 			</div>
 		</section>
 	</div>

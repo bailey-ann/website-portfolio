@@ -1,28 +1,21 @@
 <?PHP
-/*
-    Contact Form from HTML Form Guide
-
-    This program is free software published under the
-    terms of the GNU Lesser General Public License.
-
-This program is distributed in the hope that it will
-be useful - WITHOUT ANY WARRANTY; without even the
-implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
-
-@copyright html-form-guide.com 2010
+/**
+* Contact form assembly from hell
+*
+* Way too much time spent trying to figure this out.   
+* I am still not sure what I did to get this far.
+*
+* @category  PHPWebForm
+* @package   FGContactForm
+* @author    Evil <admin@html-form-guide.com>
+* @author    Bailey-Ann <email@bailey-ann.codes>
+* @copyright 2010 html-form-guide.com 
+* @license   http://www.opensource.org/licenses/mit-license.html  MIT License
+* @link      html-form-guide.com
 */
-require_once("class.phpmailer.php");
+require_once "C:/xampp/htdocs/php_test/Portfolio/vendor/phpmailer/phpmailer/PHPMailerAutoload.php";
 
-/*
-Interface to Captcha handler
-*/
-class FG_CaptchaHandler
-{
-    function Validate() { return false;}
-    function GetError(){ return '';}
-}
-/*
+/**
 FGContactForm is a general purpose contact form class
 It supports Captcha, HTML Emails, sending emails
 conditionally, File atachments and more.
@@ -191,8 +184,7 @@ class FGContactForm
 
         $this->AttachFiles();
 
-        if(!$this->mailer->Send())
-        {
+        if (!$this->mailer->Send()) {
             $this->add_error("Failed sending email!");
             return false;
         }
@@ -200,19 +192,17 @@ class FGContactForm
         return true;
     }
 
-    function CollectConditionalReceipients()
+    function CollectConditionalReceipients() 
     {
-        if(count($this->arr_conditional_receipients)>0 &&
-          !empty($this->conditional_field) &&
-          !empty($_POST[$this->conditional_field]))
-        {
-            foreach($this->arr_conditional_receipients as $condn => $rec)
+        if (count($this->arr_conditional_receipients)>0 
+            && !empty ($this->conditional_field) 
+            && !empty ($_POST[$this->conditional_field])) 
             {
-                if(strcasecmp($condn,$_POST[$this->conditional_field])==0 &&
-                !empty($rec))
-                {
+            foreach ($this->arr_conditional_receipients as $condn => $rec) {
+                if (strcasecmp($condn,$_POST[$this->conditional_field])==0 &&
+                !empty ($rec)) {
                     $this->AddRecipient($rec);
-                }
+                    }
             }
         }
     }
@@ -228,7 +218,7 @@ class FGContactForm
                             $this->GetSpamTrapInputName(),
                             $this->GetFormIDInputName()
                             );
-        if(in_array($varname,$arr_interanl_vars))
+        if (in_array($varname,$arr_interanl_vars))
         {
             return true;
         }
@@ -238,9 +228,9 @@ class FGContactForm
     function FormSubmissionToMail()
     {
         $ret_str='';
-        foreach($_POST as $key=>$value)
+        foreach ($_POST as $key=>$value)
         {
-            if(!$this->IsInternalVariable($key))
+            if (!$this->IsInternalVariable($key))
             {
                 $value = htmlentities($value,ENT_QUOTES,"UTF-8");
                 $value = nl2br($value);
@@ -248,10 +238,10 @@ class FGContactForm
                 $ret_str .= "<div class='label'>$key :</div><div class='value'>$value </div>\n";
             }
         }
-        foreach($this->fileupload_fields as $upload_field)
+        foreach ($this->fileupload_fields as $upload_field)
         {
             $field_name = $upload_field["name"];
-            if(!$this->IsFileUploaded($field_name))
+            if (!$this->IsFileUploaded($field_name))
             {
                 continue;
             }        
